@@ -1,14 +1,14 @@
-﻿
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Week10.Domain.Interfaces;
 
 namespace Week10.Infrastructure.Services
 {
-    public class ConfigurationService
+    public class ConfigurationService : IConfigurationService
     {
         private static ConfigurationService instance;
 
@@ -43,6 +43,6 @@ namespace Week10.Infrastructure.Services
 
         }
 
-       
+
     }
 }
