@@ -28,12 +28,14 @@ namespace Week10.Infrastructure.Services
         {
             ConfigurationManager configurationManager = new();
 
-            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-
+            //string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string path = Directory.GetCurrentDirectory();
 
             configurationManager.SetBasePath(path);
 
-            configurationManager.AddJsonFile("Configuration.json");
+            configurationManager.AddJsonFile("appsettings.json");
+
+            //configurationManager.AddJsonFile("Configuration.json");
 
 
 
