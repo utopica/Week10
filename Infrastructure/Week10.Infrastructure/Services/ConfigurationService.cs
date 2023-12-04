@@ -12,6 +12,10 @@ namespace Week10.Infrastructure.Services
     {
         private static ConfigurationService instance;
 
+        public ConfigurationService()
+        {
+            Console.WriteLine("Instance is created.");
+        }
         public static ConfigurationService GetInstance()
         {
             if (instance is null)
@@ -20,16 +24,16 @@ namespace Week10.Infrastructure.Services
             }
             return instance;
         }
-        public static string GetValue(string key)
+        public string GetValue(string key)
         {
             ConfigurationManager configurationManager = new();
 
-            string path = Directory.GetCurrentDirectory();
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 
 
             configurationManager.SetBasePath(path);
 
-            configurationManager.AddJsonFile("appsettings.json");
+            configurationManager.AddJsonFile("Configuration.json");
 
 
 
@@ -37,9 +41,6 @@ namespace Week10.Infrastructure.Services
 
         }
 
-        private ConfigurationService()
-        {
-
-        }
+       
     }
 }

@@ -1,17 +1,19 @@
 ﻿
 using Week10.ConsoleApp;
+using Week10.Infrastructure.Services;
 
 Console.WriteLine("Singleton");
 
+//ConfigurationService configurationService = new();
+
 ConfigurationService configurationService = ConfigurationService.GetInstance();
+ConfigurationService.GetInstance();
+ConfigurationService.GetInstance();
+ConfigurationService.GetInstance().GetValue("");
 
-ConfigurationService.GetInstance();
-ConfigurationService.GetInstance();
-ConfigurationService.GetInstance();
-ConfigurationService.GetInstance();
-ConfigurationService.GetInstance().GetValue("ExampleDb");
 
-var example = configurationService.GetValue("ExampleDb");
+
+var connectionString = configurationService.GetValue("ConnectionStrings:ExampleDb");
 
 Console.WriteLine();
 

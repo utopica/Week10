@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Week10.Infrastructure.Services;
+
 
 namespace Week10.WebApi.Controllers
 {
@@ -13,7 +13,7 @@ namespace Week10.WebApi.Controllers
         [HttpGet]
         public void Get(string name)
         {
-            ConfigurationService.GetInstance().GetValue(name);
+            //ConfigurationService.GetInstance().GetValue(name);
         }
     }
 }
